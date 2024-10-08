@@ -8,11 +8,11 @@ import task.InvalidException;
 public class Runner {
 
 
-    public static void main(String args[]) {
+    public static void main(String args[]){
 
         Scanner sc = new Scanner(System.in);
         Task task = new Task();
-  	if (args.length > 0) {
+  	       if (args.length > 0) {
 
 	        String inputString = args[0];
         	System.out.println("The input String: " + inputString);
@@ -79,28 +79,33 @@ public class Runner {
             String lineword = sc.nextLine();
             String[] stringWord = task.stringArrayWithWords(lineword);
             System.out.println(Arrays.toString(stringWord));
-  
+
+	    System.out.println("Enter the string");
+	    String stringWithoutSpace=sc.next();
+	    System.out.println("Enter the delimiter to replace");
+	    String stringReplace=sc.next();
+            System.out.println("Enter replacing delimiter");
+	    String stringReplaceWith=sc.next();
+	    System.out.println("The string without"+stringReplace+task.stringsWithNoSpaces(stringWithoutSpace,stringReplace,stringReplaceWith));
+
+
             System.out.println("Enter the strings to merge:");
-            String str1 = sc.next();
-            String str2 = sc.next();
-            String str3 = sc.next();
-            System.out.println(task.mergeString(str1, str2, str3));
+            String stringLine = sc.nextLine();
+	    String[] stringArrayJoin=task.stringArrayWithWords(stringLine,"\\s+");
+	    System.out.println("Enter the symbol to merge");
+            String symbol=sc.next();
+            System.out.println(task.mergeString(symbol,stringArrayJoin));
 
 	    System.out.println("Enter the string to remove spaces:");
             String string = sc.next();
             System.out.println(task.removeSpaces(string));
 
-	} catch (InvalidException e) {
-            System.out.println(e.getMessage());
-        }
-
-       
-
-        try {
-            System.out.println("Enter a String to find the second last pos:");
+            System.out.println("Enter a String to find the last pos:");
             String stringThree = sc.next();
-            System.out.println("The sec last char is "+task.secondLastChar(stringThree));
-
+	`   System.out.println("Enter the position of characher for penultimate");
+	    int pos=sc.nextInt();
+            System.out.println("The sec last char is "+task.penultimateChar((stringThree,pos));
+            
 	    System.out.println("Enter the String:");
             String stringFive = sc.next();
             System.out.println("Enter the Character to find its greatest position:");
@@ -109,11 +114,15 @@ public class Runner {
 
 	    System.out.println("Enter the String:");
             String stringSix = sc.next();
-            System.out.println(task.lastSubstring(stringSix));
+	    System.out.println("Enter the index to subtring from the last index");
+            int subStringIndex=sc.nextInt();
+            System.out.println(task.lastSubstring(stringSix,subStringIndex));
 
 	    System.out.println("Enter the String to get first 3 chrac:");
             String stringSeven = sc.next();
-            System.out.println("The first 3 letters " +task.firstSubstring(stringSeven));
+	    System.out.println("Enter the index of first substring");
+	    int firstsubString=sc.nextInt();
+            System.out.println("The first 3 letters " +task.firstSubstring(stringSeven,firstsubString));
 
 	    System.out.println("Enter the String:");
             String stringEight = sc.next();
@@ -139,3 +148,4 @@ public class Runner {
        
     }
 }
+
