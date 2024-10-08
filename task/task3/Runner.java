@@ -3,24 +3,19 @@ package runner;
 import java.util.Scanner;
 import java.util.Arrays;
 import task.Task;
+import task.OutOfBoundException;
 import task.InvalidException;
-import task.IndexOutOfBoundException;
-
 public class Runner {
+
 
     public static void main(String args[]) {
 
         Scanner sc = new Scanner(System.in);
         Task task = new Task();
 
-        try {
-            if (task.findLength(args[0]) > 0) {
-                String inputString = args[0];
-                System.out.println("The input String: " + inputString);
-            }
-        } catch (IndexOutOfBoundsException e) {
-            System.out.println("Input is null");
-        }
+        String inputString = args[0];
+        System.out.println("The input String: " + inputString);
+        
 
         try {
             System.out.println("Enter the String:");
@@ -42,9 +37,12 @@ public class Runner {
             System.out.println("Enter the String:");
             String stringThree = sc.next();
             System.out.println(task.secondLastChar(stringThree));
-        } catch (IndexOutOfBoundException e) {
+        } catch (OutOfBoundException e) {
             System.out.println(e.getMessage());
         } 
+        catch(InvalidException e){
+            System.out.println(e.getMessage());
+        }
 
         try {
             System.out.println("Enter the String:");
@@ -65,12 +63,18 @@ public class Runner {
         } catch (InvalidException e) {
             System.out.println(e.getMessage());
         }
+        catch (OutOfBoundException e) {
+            System.out.println(e.getMessage());
+        }
 
         try {
             System.out.println("Enter the String:");
             String stringSix = sc.next();
             System.out.println(task.lastSubstring(stringSix));
-        } catch (IndexOutOfBoundException e) {
+        } catch (OutOfBoundException e) {
+            System.out.println(e.getMessage());
+        }
+        catch (InvalidException e) {
             System.out.println(e.getMessage());
         }
 
@@ -78,7 +82,10 @@ public class Runner {
             System.out.println("Enter the String:");
             String stringSeven = sc.next();
             System.out.println(task.firstSubstring(stringSeven));
-        } catch (IndexOutOfBoundException e) {
+        } catch (OutOfBoundException e) {
+            System.out.println(e.getMessage());
+        }
+        catch (InvalidException e) {
             System.out.println(e.getMessage());
         }
 
@@ -88,7 +95,10 @@ public class Runner {
             System.out.println("Enter string to replace:");
             String stringReplace = sc.next();
             System.out.println(task.replaceString(stringEight, stringReplace));
-        } catch (IndexOutOfBoundException e) {
+        } catch (OutOfBoundException e) {
+            System.out.println(e.getMessage());
+        }
+        catch (InvalidException e) {
             System.out.println(e.getMessage());
         }
 
@@ -156,14 +166,12 @@ public class Runner {
             System.out.println(e.getMessage());
         }
 
-        try {
-            System.out.println("Enter the line string:");
-            sc.nextLine(); 
-            String line = sc.nextLine();
-            System.out.println(line);
-        } catch (InvalidException e) {
-            System.out.println( e.getMessage());
-        }
+        
+        System.out.println("Enter the line string:");
+        sc.nextLine(); 
+        String line = sc.nextLine();
+        System.out.println(line);
+        
 
         try {
             System.out.println("Enter the line string:");
