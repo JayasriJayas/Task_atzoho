@@ -1,35 +1,27 @@
-package task;
+  package task;
 
 
 public class Task{
-    public static int findLength(String string) throws InvalidException {
-        if (string == null) {
-            throw new InvalidException("Error: Input string cannot be empty");
-        }
+    public int findLength(String string){
+        validate(string);
         return string.length();
     }
 
  
-    public static char[] convertToCharArray(String string) throws InvalidException {
-        if (string == null ) {
-            throw new InvalidException("Error: Input string cannot be empty");
-        }
+    public char[] convertToCharArray(String string){
+        validate(string);
         return string.toCharArray();
     }
 
    
-    public static char secondLastChar(String string) throws OutOfBoundException,InvalidException{
+    public char penultimateChar(String string,int position){
         int length = findLength(string);
-        if (length < 2) {
-            throw new OutOfBoundException("Error: String must have at least 2 characters");
-        }
-        return string.charAt(length - 2);
+        indexValidation(string,position);
+        return string.charAt(length - pos);
     }
 
-    public static int toFindOccurances(String string, char character) throws InvalidException {
-        if (string == null) {
-            throw new InvalidException("Error: Input string cannot be empty");
-        }
+    public int toFindOccurances(String string, char character) { 
+        validate(string);
         int count = 0;
         int len = findLength(string);
         for (int i = 0; i < len; i++) {
@@ -41,72 +33,59 @@ public class Task{
     }
 
     
-    public static int lastPosition(String string, char character) throws OutOfBoundException,InvalidException{
+    public int lastPosition(String string, char character){
+        validate(string);
         int lastIndex = string.lastIndexOf(character, findLength(string) - 1);
-        if (lastIndex == -1) {
-            throw new InvalidException("Error: Character not found in the string");
-        }
         return lastIndex;
     }
 
-    public static String lastSubstring(String string) throws OutOfBoundException,InvalidException{
-        if (findLength(string) < 6) {
-            throw new OutOfBoundException("Error:String must have at least 6 characters.");
-        }
-        return string.substring(findLength(string) - 6);
+    public String lastSubstring(String string,int subString){
+	validate(string);
+        indexValidation(string,subString);
+        return string.substring(findLength(string) - subString);
     }
 
-    public static String firstSubstring(String string) throws OutOfBoundException,InvalidException {
-        if (findLength(string) < 3) {
-            throw new OutOfBoundException("Error: String must have at least 3 characters.");
-        }
-        return string.substring(0, 3);
+    public String firstSubstring(String string,int firstsubString)  {
+        validate(string);
+	indexValidation(string,firstsubString);
+        return string.substring(0, firstsubString);
     }
 
-    public static String replaceString(String string, String replaceString) throws InvalidException, OutOfBoundException {
+    public String replaceString(String string, String replaceString)  {
        
-        if (replaceString == null) {
-            throw new InvalidException("Error: Replacement string cannot be empty");
-        }
+        validate(string);
+        validate(replaceString);
+        indexValidation(replaceString,replaceString.length());
         String firstString = firstSubstring(string);
         return string.replace(firstString, replaceString);
     }
 
 
-    public static boolean starts(String string, String replaceString) throws InvalidException {
-        if (string == null ||replaceString == null) {
-            throw new InvalidException("Error:  Neither the main string nor the comparison string can be empty");
-        }
+    public boolean starts(String string, String replaceString) {
+        validate(string);
+	validate(replaceString);
         return string.startsWith(replaceString);
     }
 
-    public static boolean ends(String string, String replaceString) throws InvalidException {
-        if (string == null || replaceString == null) {
-            throw new InvalidException("Error: Neither the main string nor the comparison string can be empty.");
-        }
+    public boolean ends(String string, String replaceString) {
+        validate(string);
+	validate(replaceString);
         return string.endsWith(replaceString);
     }
 
    
-    public static String toUpper(String string) throws InvalidException {
-        if (string == null || string.isEmpty()) {
-            throw new InvalidException("Error:Input string cannot be empty.");
-        }
+    public String toUpper(String string)  {
+        validate(string);
         return string.toUpperCase();
     }
 
-    public static String toLower(String string) throws InvalidException {
-        if (string == null) {
-            throw new InvalidException("Error:Input string cannot be empty.");
-        }
+    public String toLower(String string){
+        validate(string);
         return string.toLowerCase();
     }
 
-    public static String reverse(String string) throws InvalidException {
-    	if (string == null) {
-        	throw new InvalidException("Error: Input string cannot be empty.");
-    	}
-
+    public String reverse(String string)  {
+    	validate(string);
     	char[] charArray = convertToCharArray(string);
     	String reversedString = "";
     
@@ -117,46 +96,48 @@ public class Task{
    	 return reversedString;
 	}
 
-public static boolean checkEquals(String string1, String string2) throws InvalidException {
-    if (string1 == null || string2 == null) {
-        throw new InvalidException("Error: Both input strings must not be null");
-    }
+public boolean checkEquals(String string1, String string2)  {
+    validate(string1);
+    validate(string2);
     return string1.equals(string2);
 }
 
-    public static boolean checkEqualsIgnoreCase(String string1, String string2) throws InvalidException {
-        if (string1 == null || string2 == null) {
-            throw new InvalidException("Error:input strings cannot be empty");
-        }
+    public boolean checkEqualsIgnoreCase(String string1, String string2)  {
+        validate(string1);
+        validate(string2);
         return string1.equalsIgnoreCase(string2);
     }
 
-    public static String stringsWithNoSpaces(String spaces) throws InvalidException {
-        if (spaces == null) {
-            throw new InvalidException("Error:Input string cannot be empty");
-        }
-        return spaces.replaceAll("\\s", "");
+    public String stringsWithNoSpaces(String string,String replaceString,String replaceWith)  {
+        validate(string);
+        return string.replaceAll(replaceString,replaceWith);
     }
 
-    public static String[] stringArrayWithWords(String lineword) throws InvalidException {
-        if (lineword == null) {
-            throw new InvalidException("Error:Input line cannot be empty");
-        }
-        return lineword.split("\\s+");
+    public String[] stringArrayWithWords(String lineword,String splitSymbol) { 
+        validate(lineword);
+	validate(splitSymbol);
+        return lineword.split(splitSymbol);
     }
 
-    public static String mergeString(String str1, String str2, String str3) throws InvalidException {
-        if (str1 == null || str2 == null || str3 == null) {
-            throw new InvalidException("Error:Inpug cannot be empty");
-        }
-        return String.join("-", str1, str2, str3);
+    public String mergeString(String symbol,String[] stringArray)  {
+        return String.join(symbol, stringArray);
     }
 
-    public static String removeSpaces(String string) throws InvalidException {
-        if (string == null) {
-            throw new InvalidException("Error:Input line cannot be empty");
-        }
+    public String removeSpaces(String string)  {
+        validate(string);
         return string.trim();
     }
+    public void validate(String string)throws InvalidException{
+	if(string==null){
+		throw new InvalidException("Error:Input string cannot be null");
+	}
+	
+    }
+    public void indexValidation(String string,int value)throws OutOfBoundException{
+	if(string.length<0 && string.length<value){
+		 throw new OutOfBoundException("Error:The value is out of range");
+    }
 }
+}
+
 
