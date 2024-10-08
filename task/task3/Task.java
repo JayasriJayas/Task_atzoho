@@ -1,19 +1,7 @@
 package task;
 
+
 public class Task{
-    public static class IndexOutOfBoundException extends Exception{
-	public IndexOutOfBoundException(String message){
-		super(message);
-	}
-}
-public static class InvalidException extends Exception{
-	public InvalidException(String message){
-		super(message);
-	}
-}
-	
-
-
     public static int findLength(String string) throws InvalidException {
         if (string == null) {
             throw new InvalidException("Error: Input string cannot be empty");
@@ -30,10 +18,10 @@ public static class InvalidException extends Exception{
     }
 
    
-    public static char secondLastChar(String string) throws IndexOutOfBoundException{
+    public static char secondLastChar(String string) throws OutOfBoundException,InvalidException{
         int length = findLength(string);
         if (length < 2) {
-            throw new IndexOutOfBoundException("Error: String must have at least 2 characters");
+            throw new OutOfBoundException("Error: String must have at least 2 characters");
         }
         return string.charAt(length - 2);
     }
@@ -53,7 +41,7 @@ public static class InvalidException extends Exception{
     }
 
     
-    public static int lastPosition(String string, char character) throws IndexOutOfBoundException{
+    public static int lastPosition(String string, char character) throws OutOfBoundException,InvalidException{
         int lastIndex = string.lastIndexOf(character, findLength(string) - 1);
         if (lastIndex == -1) {
             throw new InvalidException("Error: Character not found in the string");
@@ -61,21 +49,21 @@ public static class InvalidException extends Exception{
         return lastIndex;
     }
 
-    public static String lastSubstring(String string) throws IndexOutOfBoundException{
+    public static String lastSubstring(String string) throws OutOfBoundException,InvalidException{
         if (findLength(string) < 6) {
-            throw new IndexOutOfBoundException("Error:String must have at least 6 characters.");
+            throw new OutOfBoundException("Error:String must have at least 6 characters.");
         }
         return string.substring(findLength(string) - 6);
     }
 
-    public static String firstSubstring(String string) throws IndexOutOfBoundException {
+    public static String firstSubstring(String string) throws OutOfBoundException,InvalidException {
         if (findLength(string) < 3) {
-            throw new IndexOutOfBoundException("Error: String must have at least 3 characters.");
+            throw new OutOfBoundException("Error: String must have at least 3 characters.");
         }
         return string.substring(0, 3);
     }
 
-    public static String replaceString(String string, String replaceString) throws InvalidException {
+    public static String replaceString(String string, String replaceString) throws InvalidException, OutOfBoundException {
        
         if (replaceString == null) {
             throw new InvalidException("Error: Replacement string cannot be empty");
@@ -171,3 +159,4 @@ public static boolean checkEquals(String string1, String string2) throws Invalid
         return string.trim();
     }
 }
+
