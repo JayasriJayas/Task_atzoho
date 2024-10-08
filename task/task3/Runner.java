@@ -12,31 +12,116 @@ public class Runner {
 
         Scanner sc = new Scanner(System.in);
         Task task = new Task();
+  	if (args.length > 0) {
 
-        String inputString = args[0];
-        System.out.println("The input String: " + inputString);
+	        String inputString = args[0];
+        	System.out.println("The input String: " + inputString);
+	}
+	else{
+		 System.out.println("No arguments");
+	}
         
 
         try {
-            System.out.println("Enter the String:");
+            System.out.println("Enter a String to find length:");
             String stringOne = sc.next();
-            System.out.println(task.findLength(stringOne));
-        } catch (InvalidException e) {
-            System.out.println(e.getMessage());
-        }
+            System.out.println("Thelength of the string is "+task.findLength(stringOne));
+      
 
-        try {
-            System.out.println("Enter the String:");
+      
+            System.out.println("Enter a String to convert into char array:");
             String stringTwo = sc.next();
-            System.out.println(Arrays.toString(task.convertToCharArray(stringTwo)));
-        } catch (InvalidException e) {
+            System.out.println("The string converted as char array is "+Arrays.toString(task.convertToCharArray(stringTwo)));
+
+	    System.out.println("Enter a String:");
+            String stringFour = sc.next();
+            System.out.println("Enter a character to find its occurance:");
+            char characterr = sc.next().charAt(0);
+            System.out.println("Frequency of the charac"+task.toFindOccurances(stringFour, characterr));
+
+	    System.out.println("Enter the String:");
+            String stringNine = sc.next();
+            System.out.println("Enter string to check if it starts with this :");
+            String stringCheck = sc.next();
+            System.out.println("Is the string starts with" + stringCheck + task.starts(stringNine, stringCheck));
+
+	    System.out.println("Enter the String:");
+            String stringTen = sc.next();
+            System.out.println("Enter string to check if it ends with this:");
+            String stringEndCheck = sc.next();
+            System.out.println("Is the string ends with" + stringEndCheck +task.ends(stringTen, stringEndCheck));
+
+	    System.out.println("Enter the String to convert to uppercase:");
+            String stringEleven = sc.next();
+            System.out.println("The String after conversion "+task.toUpper(stringEleven));
+
+	    System.out.println("Enter the String to convert to lower case:");
+            String stringTwelve = sc.next();
+            System.out.println("The String after conversion in lowercase "+task.toLower(stringTwelve));
+
+	    System.out.println("Enter the String to reverse:");
+            String stringThirteen = sc.next();
+            System.out.println(task.reverse(stringThirteen));
+
+	    System.out.println("Enter the String:");
+            String stringFourteen = sc.next();
+            System.out.println("Enter the String to compare:");
+            String stringEqual = sc.next();
+            System.out.println("IS it is equal "+task.checkEquals(stringFourteen, stringEqual));
+
+	    System.out.println("Enter the String:");
+            String stringFifteen = sc.next();
+            System.out.println("Enter the String to compare ignoring case:");
+            String stringEquals = sc.next();
+            System.out.println("Is it equal "+task.checkEqualsIgnoreCase(stringFifteen, stringEquals));
+
+	    System.out.println("Enter the line string:");
+            String lineword = sc.nextLine();
+            String[] stringWord = task.stringArrayWithWords(lineword);
+            System.out.println(Arrays.toString(stringWord));
+  
+            System.out.println("Enter the strings to merge:");
+            String str1 = sc.next();
+            String str2 = sc.next();
+            String str3 = sc.next();
+            System.out.println(task.mergeString(str1, str2, str3));
+
+	    System.out.println("Enter the string to remove spaces:");
+            String string = sc.next();
+            System.out.println(task.removeSpaces(string));
+
+	} catch (InvalidException e) {
             System.out.println(e.getMessage());
         }
 
+       
+
         try {
-            System.out.println("Enter the String:");
+            System.out.println("Enter a String to find the second last pos:");
             String stringThree = sc.next();
-            System.out.println(task.secondLastChar(stringThree));
+            System.out.println("The sec last char is "+task.secondLastChar(stringThree));
+
+	    System.out.println("Enter the String:");
+            String stringFive = sc.next();
+            System.out.println("Enter the Character to find its greatest position:");
+            char character = sc.next().charAt(0);
+            System.out.println("The greatest position of the character"+task.lastPosition(stringFive, character));
+
+	    System.out.println("Enter the String:");
+            String stringSix = sc.next();
+            System.out.println(task.lastSubstring(stringSix));
+
+	    System.out.println("Enter the String to get first 3 chrac:");
+            String stringSeven = sc.next();
+            System.out.println("The first 3 letters " +task.firstSubstring(stringSeven));
+
+	    System.out.println("Enter the String:");
+            String stringEight = sc.next();
+            System.out.println("Enter string to replace :");
+            String stringReplace = sc.next();
+            System.out.println("The string after replacement "+task.replaceString(stringEight, stringReplace));
+
+
         } catch (OutOfBoundException e) {
             System.out.println(e.getMessage());
         } 
@@ -44,160 +129,13 @@ public class Runner {
             System.out.println(e.getMessage());
         }
 
-        try {
-            System.out.println("Enter the String:");
-            String stringFour = sc.next();
-            System.out.println("Enter the Character:");
-            char characterr = sc.next().charAt(0);
-            System.out.println(task.toFindOccurances(stringFour, characterr));
-        } catch (InvalidException e) {
-            System.out.println(e.getMessage());
-        }
 
-        try {
-            System.out.println("Enter the String:");
-            String stringFive = sc.next();
-            System.out.println("Enter the Character:");
-            char character = sc.next().charAt(0);
-            System.out.println(task.lastPosition(stringFive, character));
-        } catch (InvalidException e) {
-            System.out.println(e.getMessage());
-        }
-        catch (OutOfBoundException e) {
-            System.out.println(e.getMessage());
-        }
-
-        try {
-            System.out.println("Enter the String:");
-            String stringSix = sc.next();
-            System.out.println(task.lastSubstring(stringSix));
-        } catch (OutOfBoundException e) {
-            System.out.println(e.getMessage());
-        }
-        catch (InvalidException e) {
-            System.out.println(e.getMessage());
-        }
-
-        try {
-            System.out.println("Enter the String:");
-            String stringSeven = sc.next();
-            System.out.println(task.firstSubstring(stringSeven));
-        } catch (OutOfBoundException e) {
-            System.out.println(e.getMessage());
-        }
-        catch (InvalidException e) {
-            System.out.println(e.getMessage());
-        }
-
-        try {
-            System.out.println("Enter the String:");
-            String stringEight = sc.next();
-            System.out.println("Enter string to replace:");
-            String stringReplace = sc.next();
-            System.out.println(task.replaceString(stringEight, stringReplace));
-        } catch (OutOfBoundException e) {
-            System.out.println(e.getMessage());
-        }
-        catch (InvalidException e) {
-            System.out.println(e.getMessage());
-        }
-
-        try {
-            System.out.println("Enter the String:");
-            String stringNine = sc.next();
-            System.out.println("Enter string to check if it starts:");
-            String stringCheck = sc.next();
-            System.out.println(task.starts(stringNine, stringCheck));
-        } catch (InvalidException e) {
-            System.out.println(e.getMessage());
-        }
-
-        try {
-            System.out.println("Enter the String:");
-            String stringTen = sc.next();
-            System.out.println("Enter string to check if it ends:");
-            String stringEndCheck = sc.next();
-            System.out.println(task.ends(stringTen, stringEndCheck));
-        } catch (InvalidException e) {
-            System.out.println(e.getMessage());
-        }
-
-        try {
-            System.out.println("Enter the String:");
-            String stringEleven = sc.next();
-            System.out.println(task.toUpper(stringEleven));
-        } catch (InvalidException e) {
-            System.out.println(e.getMessage());
-        }
-
-        try {
-            System.out.println("Enter the String:");
-            String stringTwelve = sc.next();
-            System.out.println(task.toLower(stringTwelve));
-        } catch (InvalidException e) {
-            System.out.println(e.getMessage());
-        }
-
-        try {
-            System.out.println("Enter the String:");
-            String stringThirteen = sc.next();
-            System.out.println(task.reverse(stringThirteen));
-        } catch (InvalidException e) {
-            System.out.println(e.getMessage());
-        }
-
-        try {
-            System.out.println("Enter the String:");
-            String stringFourteen = sc.next();
-            System.out.println("Enter the String to compare:");
-            String stringEqual = sc.next();
-            System.out.println(task.checkEquals(stringFourteen, stringEqual));
-        } catch (InvalidException e) {
-            System.out.println(e.getMessage());
-        }
-
-        try {
-            System.out.println("Enter the String:");
-            String stringFifteen = sc.next();
-            System.out.println("Enter the String to compare ignoring case:");
-            String stringEquals = sc.next();
-            System.out.println(task.checkEqualsIgnoreCase(stringFifteen, stringEquals));
-        } catch (InvalidException e) {
-            System.out.println(e.getMessage());
-        }
-
-        
         System.out.println("Enter the line string:");
         sc.nextLine(); 
         String line = sc.nextLine();
-        System.out.println(line);
+        System.out.println("The Strings in a single line "+line);
         
 
-        try {
-            System.out.println("Enter the line string:");
-            String lineword = sc.nextLine();
-            String[] stringWord = task.stringArrayWithWords(lineword);
-            System.out.println(Arrays.toString(stringWord));
-        } catch (InvalidException e) {
-            System.out.println(e.getMessage());
-        }
-
-        try {
-            System.out.println("Enter the strings to merge:");
-            String str1 = sc.next();
-            String str2 = sc.next();
-            String str3 = sc.next();
-            System.out.println(task.mergeString(str1, str2, str3));
-        } catch (InvalidException e) {
-            System.out.println(e.getMessage());
-        }
-
-        try {
-            System.out.println("Enter the string to remove spaces:");
-            String string = sc.next();
-            System.out.println(task.removeSpaces(string));
-        } catch (InvalidException e) {
-            System.out.println(e.getMessage());
-        }
+       
     }
 }
