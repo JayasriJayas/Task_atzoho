@@ -24,7 +24,7 @@ public class Runner {
 
         try {
 
-       /*   System.out.println("Enter a String to find length:");
+          System.out.println("Enter a String to find length:");
             String stringLength = sc.next();
             System.out.println("Thelength of the string is "+task.findLength(stringLength));
 
@@ -86,7 +86,7 @@ public class Runner {
 
 	    System.out.println("Enter the String to convert to lower case:");
             String stringLower = sc.next();
-            System.out.println("The String after conversion in lowercase "+task.toLower(stringLower));*/
+            System.out.println("The String after conversion in lowercase "+task.toLower(stringLower));
 
 	    System.out.println("Enter the String to reverse:");
             String stringReverse = sc.next();
