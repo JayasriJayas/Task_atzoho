@@ -39,8 +39,8 @@ public class Task {
 
     public String lastSubstring(String string,int subString)throws InvalidException, OutOfBoundException{
 	validate(string);
-        indexValidation(string,subString);
 	int length=string.length();
+        indexValidation(length,subString);
         return string.substring(length-subString);
     }
 
