@@ -12,7 +12,7 @@ public class Task {
         return string.toCharArray();
     }
 
-/*    public char penultimateChar(String string,int position)throws InvalidException, OutOfBoundException{
+    public char penultimateChar(String string,int position)throws InvalidException, OutOfBoundException{
         int length = findLength(string);
         indexValidation(string,position);
         return string.charAt(length - position);
@@ -79,7 +79,7 @@ public class Task {
     public String toLower(String string)throws InvalidException{
         validate(string);
         return string.toLowerCase();
-    }*/
+    }
 
      public String reverse(String string)throws InvalidException  {
     	validate(string);
