@@ -13,15 +13,15 @@ public class Task {
     }
 
     public char penultimateChar(String string,int position)throws InvalidException, OutOfBoundException{
-        int length = findLength(string);
-        indexValidation(string,position);
+        int length = string.length();
+        indexValidation(length,position);
         return string.charAt(length - position);
     }
 	
     public int toFindOccurances(String string, char character)throws InvalidException { 
         validate(string);
         int count = 0;
-        int len = findLength(string);
+        int len = string.length();
         for (int i = 0; i < len; i++) {
             if (string.charAt(i) == character) {
                 count++;
@@ -33,27 +33,31 @@ public class Task {
     
     public int lastPosition(String string, char character)throws InvalidException{
         validate(string);
-        int lastIndex = string.lastIndexOf(character, findLength(string) - 1);
+        int lastIndex = string.lastIndexOf(character, string.length() - 1);
         return lastIndex;
     }
 
     public String lastSubstring(String string,int subString)throws InvalidException, OutOfBoundException{
 	validate(string);
         indexValidation(string,subString);
-        return string.substring(findLength(string) - subString);
+	int length=string.length();
+        return string.substring(length-subString);
     }
 
     public String firstSubstring(String string,int firstsubString)throws InvalidException, OutOfBoundException  {
         validate(string);
-	indexValidation(string,firstsubString);
+	int length=string.length();
+	indexValidation(length,firstsubString);
         return string.substring(0, firstsubString);
     }
 
     public String replaceString(String string, String replaceString)throws InvalidException, OutOfBoundException  {
         validate(string);
         validate(replaceString);
-        indexValidation(replaceString,replaceString.length());
-        String firstString = firstSubstring(string,replaceString.length());
+	int lenOfString=string.length();
+	int lenOfReplace=replaceString.length();
+        indexValidation(lenOfString,lenOfReplace);
+        String firstString = firstSubstring(string,lenOfReplace);
         return string.replace(firstString, replaceString);
     }
 
@@ -134,10 +138,11 @@ public class Task {
 	}
 	
     }
-    public void indexValidation(String string,int value)throws OutOfBoundException{
-	if(value<0 || string.length()<value){
+    public void indexValidation(int stringLen,int value)throws OutOfBoundException{
+	if(value<0 || stringLen<value){
 		 throw new OutOfBoundException("Error:The value is out of range");
 	}
     }
 } 
+ 
 
