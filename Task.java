@@ -13,15 +13,15 @@ public class Task {
     }
 
     public char penultimateChar(String string,int position)throws InvalidException, OutOfBoundException{
-        int length = string.length();
+        int length =findLength(string);
         indexValidation(length,position);
         return string.charAt(length - position);
     }
 	
     public int toFindOccurances(String string, char character)throws InvalidException { 
-        validate(string);
+        int len = toFindOccurances(string);
         int count = 0;
-        int len = string.length();
+        
         for (int i = 0; i < len; i++) {
             if (string.charAt(i) == character) {
                 count++;
@@ -32,30 +32,26 @@ public class Task {
 
     
     public int lastPosition(String string, char character)throws InvalidException{
-        validate(string);
-        int lastIndex = string.lastIndexOf(character, string.length() - 1);
+        int length=findLength(string);
+        int lastIndex = string.lastIndexOf(character, length-1);
         return lastIndex;
     }
 
     public String lastSubstring(String string,int subString)throws InvalidException, OutOfBoundException{
-	validate(string);
-	int length=string.length();
+	int length=findLength(string);
         indexValidation(length,subString);
         return string.substring(length-subString);
     }
 
     public String firstSubstring(String string,int firstsubString)throws InvalidException, OutOfBoundException  {
-        validate(string);
-	int length=string.length();
+	int length=findLength(string);
 	indexValidation(length,firstsubString);
         return string.substring(0, firstsubString);
     }
 
     public String replaceString(String string, String replaceString)throws InvalidException, OutOfBoundException  {
-        validate(string);
-        validate(replaceString);
-	int lenOfString=string.length();
-	int lenOfReplace=replaceString.length();
+	int lenOfString=findLength(string);
+	int lenOfReplace=findLength(string);
         indexValidation(lenOfString,lenOfReplace);
         String firstString = firstSubstring(string,lenOfReplace);
         return string.replace(firstString, replaceString);
@@ -86,7 +82,6 @@ public class Task {
     }
 
      public String reverse(String string)throws InvalidException  {
-    	validate(string);
     	char[] charArray = convertToCharArray(string);
     	String reversedString = "";
     
@@ -144,5 +139,7 @@ public class Task {
 	}
     }
 } 
+
+
  
 
