@@ -51,7 +51,7 @@ public class Task {
 
     public String replaceString(String string, String replaceString)throws InvalidException, OutOfBoundException  {
 	int lenOfString=findLength(string);
-	int lenOfReplace=findLength(string);
+	int lenOfReplace=findLength(replaceString);
         indexValidation(lenOfString,lenOfReplace);
         String firstString = firstSubstring(string,lenOfReplace);
         return string.replace(firstString, replaceString);
@@ -83,9 +83,10 @@ public class Task {
 
      public String reverse(String string)throws InvalidException  {
     	char[] charArray = convertToCharArray(string);
+	int length=findLength(string);
     	String reversedString = "";
     
-    	for (int i = findLength(string) - 1; i >= 0; i--) {
+    	for (int i = length - 1; i >= 0; i--) {
         	reversedString += charArray[i];
    		 }
     
@@ -139,6 +140,7 @@ public class Task {
 	}
     }
 } 
+
 
 
  
