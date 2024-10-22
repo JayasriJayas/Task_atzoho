@@ -24,7 +24,7 @@ public class Runner {
 
         try {
 
-    /*        System.out.println("Enter a String to find length:");
+          System.out.println("Enter a String to find length:");
             String stringLength = sc.next();
             System.out.println("Thelength of the string is "+task.findLength(stringLength));
 

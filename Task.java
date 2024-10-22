@@ -19,7 +19,11 @@ public class Task {
     }
 	
     public int toFindOccurances(String string, char character)throws InvalidException { 
+<<<<<<< HEAD
         int len = findLength(string);
+=======
+        int len = toFindOccurances(string);
+>>>>>>> 74f050d06e3e7f1153c2ccdf6c0d031e89fe25e6
         int count = 0;
         
         for (int i = 0; i < len; i++) {
@@ -142,4 +146,8 @@ public class Task {
 	}
     }
 } 
+
+
+
+ 
 
