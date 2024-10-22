@@ -24,7 +24,7 @@ public class Runner {
 
         try {
 
-       /*   System.out.println("Enter a String to find length:");
+    /*        System.out.println("Enter a String to find length:");
             String stringLength = sc.next();
             System.out.println("Thelength of the string is "+task.findLength(stringLength));
 
@@ -86,7 +86,7 @@ public class Runner {
 
 	    System.out.println("Enter the String to convert to lower case:");
             String stringLower = sc.next();
-            System.out.println("The String after conversion in lowercase "+task.toLower(stringLower));*/
+            System.out.println("The String after conversion in lowercase "+task.toLower(stringLower));
 
 	    System.out.println("Enter the String to reverse:");
             String stringReverse = sc.next();
@@ -113,16 +113,19 @@ public class Runner {
 	    System.out.println("Enter the string");
 	    String stringWithoutSpace=sc.nextLine();
 	    System.out.println("Enter the delimiter to replace");
-	    String stringReplace=sc.next();
+	    String stringReplace1=sc.next();
             System.out.println("Enter replacing delimiter");
 	    String stringReplaceWith=sc.next();
-	    System.out.println("The string without "+stringReplace +": "+task.stringsWithNoSpaces(stringWithoutSpace,stringReplace,stringReplaceWith));
+	    System.out.println("The string without "+stringReplace +": "+task.stringsWithNoSpaces(stringWithoutSpace,stringReplace1,stringReplaceWith));*/
 
 
-            System.out.println("Enter the strings to merge:");
-	    sc.nextLine();
-            String stringLine = sc.nextLine();
-	    String[] stringArrayJoin=task.stringArrayWithWords(stringLine,"\\s+");
+            System.out.println("Enter the no of strings to merge:");
+            int noOfStrings = sc.nextInt();
+	    String[] stringArrayJoin=new String[noOfStrings];
+	    for(int i=0;i<noOfStrings;i++){
+		System.out.println("Enter String"+i+": ");
+		stringArrayJoin[i]=sc.next();
+	    }
 	    System.out.println("Enter the symbol to merge");
             String symbol=sc.next();
             System.out.println(task.mergeString(symbol,stringArrayJoin));
@@ -137,6 +140,9 @@ public class Runner {
        catch(InvalidException e){
             System.out.println(e.getMessage());
         }
+       catch(OutOfBoundException e){
+	    System.out.println(e.getMessage());
+	} 
 
 	sc.close();
     }
