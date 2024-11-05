@@ -81,10 +81,9 @@ public class Task {
         return string.toLowerCase();
     }
 
-      public String reverse(String string)throws InvalidException  {
-    	char[] charArray = convertToCharArray(string);
-	int length=findLength(string);    
-    	int i=0,j=length-1;
+     public String reverse(String string)throws InvalidException  {
+    	char[] charArray = convertToCharArray(string);    
+    	int i=0,j=charArray.length-1;
 	char temp;
 	while(i<j){
 		temp=charArray[i];
@@ -95,6 +94,7 @@ public class Task {
 	}
    	 return new String(charArray);
 	}
+
 
     public boolean checkEquals(String string1, String string2)throws InvalidException  {
     validate(string1);
