@@ -13,6 +13,9 @@ public class Task {
     }
 
     public char penultimateChar(String string,int position)throws InvalidException, OutOfBoundException{
+	if(string==""){
+		throw new InvalidException("Error:Input string cannot be empty");
+	}
         int length =findLength(string);
         indexValidation(length,position);
         return string.charAt(length - position);
@@ -95,7 +98,6 @@ public class Task {
    	 return new String(charArray);
 	}
 
-
     public boolean checkEquals(String string1, String string2)throws InvalidException  {
     validate(string1);
     validate(string2);
@@ -122,6 +124,7 @@ public class Task {
     public String mergeString(String symbol,String[] stringArray) throws InvalidException {
 	if(stringArray==null){
 		return "Error: The array is null, no elements are there in the array";
+	}
 	validate(symbol);
         return String.join(symbol, stringArray);
     }
