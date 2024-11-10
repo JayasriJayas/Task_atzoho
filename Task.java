@@ -1,14 +1,15 @@
 package task;
+import util.Util;
 
 
-public class Task {
+public class StringTask {
     public int findLength(String string)throws InvalidException{
-        validate(string);
+        Util.validate(string);
         return string.length();
     }
 
     public char[] convertToCharArray(String string)throws InvalidException{
-        validate(string);
+        Util.validate(string);
         return string.toCharArray();
     }
 
@@ -17,7 +18,10 @@ public class Task {
 		throw new InvalidException("Error:Input string cannot be empty");
 	}
         int length =findLength(string);
-        indexValidation(length,position);
+	if(length==0){
+		throw new InvalidException("Error:Input string cannot be empty");
+	}
+        Util.indexValidation(length,position);
         return string.charAt(length - position);
     }
 	
@@ -42,45 +46,45 @@ public class Task {
 
     public String lastSubstring(String string,int subString)throws InvalidException, OutOfBoundException{
 	int length=findLength(string);
-        indexValidation(length,subString);
+        Util.indexValidation(length,subString);
         return string.substring(length-subString);
     }
 
     public String firstSubstring(String string,int firstsubString)throws InvalidException, OutOfBoundException  {
 	int length=findLength(string);
-	indexValidation(length,firstsubString);
+	Util.indexValidation(length,firstsubString);
         return string.substring(0, firstsubString);
     }
 
     public String replaceString(String string, String replaceString)throws InvalidException, OutOfBoundException  {
 	int lenOfString=findLength(string);
 	int lenOfReplace=findLength(replaceString);
-        indexValidation(lenOfString,lenOfReplace);
+        Util.indexValidation(lenOfString,lenOfReplace);
         String firstString = firstSubstring(string,lenOfReplace);
         return string.replace(firstString, replaceString);
     }
 
 
     public boolean starts(String string, String replaceString)throws InvalidException {
-        validate(string);
-	validate(replaceString);
+        Util.validate(string);
+	Util.validate(replaceString);
         return string.startsWith(replaceString);
     }
 
     public boolean ends(String string, String replaceString)throws InvalidException {
-        validate(string);
-	validate(replaceString);
+        Util.validate(string);
+	Util.validate(replaceString);
         return string.endsWith(replaceString);
     }
 
    
     public String toUpper(String string)throws InvalidException  {
-        validate(string);
+        Util.validate(string);
         return string.toUpperCase();
     }
 
     public String toLower(String string)throws InvalidException{
-        validate(string);
+        ErrorHandler.validate(string);
         return string.toLowerCase();
     }
 
@@ -99,52 +103,37 @@ public class Task {
 	}
 
     public boolean checkEquals(String string1, String string2)throws InvalidException  {
-    validate(string1);
-    validate(string2);
-    return string1.equals(string2);
+   	Util.validate(string1);
+    	Util.validate(string2);
+    	return string1.equals(string2);
     }
 
     public boolean checkEqualsIgnoreCase(String string1, String string2)throws InvalidException  {
-        validate(string1);
-        validate(string2);
+        Util.validate(string1);
+        Util.validate(string2);
         return string1.equalsIgnoreCase(string2);
     }
 
     public String stringsWithNoSpaces(String string,String replaceString,String replaceWith)throws InvalidException  {
-        validate(string);
+        Util.validate(string);
         return string.replaceAll(replaceString,replaceWith);
     }
 
     public String[] stringArrayWithWords(String lineword,String splitSymbol)throws InvalidException { 
-        validate(lineword);
-	validate(splitSymbol);
+        Util.validate(lineword);
+	Util.validate(splitSymbol);
         return lineword.split(splitSymbol);
     }
 
     public String mergeString(String symbol,String[] stringArray) throws InvalidException {
-	if(stringArray==null){
-		return "Error: The array is null, no elements are there in the array";
-	}
-	validate(symbol);
+	Util.validate(stringArray);
+	Util.validate(symbol);
         return String.join(symbol, stringArray);
     }
 
     public String removeSpaces(String string) throws InvalidException {
-        validate(string);
+        Util.validate(string);
         return string.trim();
     }
 
-	
-
-   public void validate(String string)throws InvalidException{
-	if(string==null){
-		throw new InvalidException("Error:Input string cannot be null");
-	}
-	
-    }
-    public void indexValidation(int stringLen,int value)throws OutOfBoundException{
-	if(value<0 || stringLen<value){
-		 throw new OutOfBoundException("Error:The value is out of range");
-	}
-    }
 } 
