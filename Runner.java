@@ -13,6 +13,15 @@ public class Runner {
         Scanner sc = new Scanner(System.in);
         StringTask task = new StringTask();
         int choice;
+	
+	/*public static void replaceString(){
+		System.out.println("Enter a string:");
+                String stringToReplace = sc.next();
+                System.out.println("Enter substring to replace:");
+                String replacement = sc.next();
+                System.out.println("Modified string: " + task.replaceString(stringToReplace, replacement));
+                
+	}*/
 
         do {
             System.out.println("\nEnter an option number or enter -1 to exit:");
@@ -73,7 +82,7 @@ public class Runner {
                         String stringFreq = sc.next();
                         System.out.println("Enter a character to find its occurrence:");
                         char charFreq = sc.next().charAt(0);
-                        System.out.println("Frequency of the character '" + charFreq + "': " + task.toFindOccurrences(stringFreq, charFreq));
+                        System.out.println("Frequency of the character '" + charFreq + "': " +  task.toFindOccurances(stringFreq, charFreq));
                         break;
 
                     case 6:
@@ -101,11 +110,17 @@ public class Runner {
                         break;
 
                     case 9:
-                        System.out.println("Enter a string:");
-                        String stringToReplace = sc.next();
-                        System.out.println("Enter substring to replace:");
-                        String replacement = sc.next();
-                        System.out.println("Modified string: " + task.replaceString(stringToReplace, replacement));
+                        try{
+				         System.out.println("Enter a string:");
+               		     String stringToReplace = null;
+                         System.out.println("Enter substring to replace:");
+                         String replacement = null;
+                         System.out.println("Modified string: " + task.replaceString(stringToReplace, replacement));
+				         //replaceString();
+			           }
+			           catch(InvalidException e){
+				            throw new OutOfBoundException("Error:Value is in out of range",e);
+                        } 	
                         break;
 
                     case 10:
@@ -202,10 +217,14 @@ public class Runner {
                     default:
                         System.out.println("Invalid choice");
                 }
+          
             } catch (InvalidException e) {
                 System.out.println("Invalid operation: " + e.getMessage());
-            } catch (OutOfBoundException e) {
+            }catch (OutOfBoundException e) {
                 System.out.println("Out of bound error: " + e.getMessage());
+    		    if (e.getCause() != null) {
+       			System.out.println("Cause: " + e.getCause().getMessage());
+    		    } 
             }
         } while (choice != -1);
 
