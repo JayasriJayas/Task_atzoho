@@ -1,5 +1,7 @@
 package task;
 import util.Util;
+import exception.OutOfBoundException;
+import exception.InvalidException;
 
 
 public class StringTask {
