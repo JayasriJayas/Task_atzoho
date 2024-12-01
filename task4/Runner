@@ -1,0 +1,171 @@
+package stringbuilderrunner;
+import java.util.Scanner;
+import java.util.Arrays;
+import stringbuildertask.StringBuilderTask;
+import exception.OutOfBoundException;
+import exception.InvalidException;
+
+public class Runner{
+	
+	public static void main(String[] args){
+		Scanner sc=new Scanner(System.in);
+		StringBuilderTask task = new StringBuilderTask();
+		int choice;
+		try{
+		do{
+			System.out.println("Add a string and find its length");
+			System.out.println("Adding strings and find final length");
+			System.out.println("Insert a string in between and find final length");
+			System.out.println("Delete a string and find final length");
+			System.out.println("Replace a symbol and find the final length");
+			System.out.println("Reverse the string and find the final length");
+			System.out.println("Delete the substring and find the final length");
+			System.out.println("Replace the substring and find the final length");
+			System.out.println("Find the first occurance of the symbol");
+			System.out.println("Find the last occurance of the symbol");
+			System.out.println("Enter the choice:");
+			choice = sc.nextInt();
+
+			try{
+			switch(choice){
+				case 1:
+					StringBuilder stringBuilder = new StringBuilder();
+					System.out.println("The length of string builder: "+ task.findLength(stringBuilder ));
+					System.out.println("Enter the string to be added");
+					String string = sc.next();
+					System.out.println("StringBuilder:"+task.addString(stringBuilder,string));
+					System.out.println("The length of string builder: "+ task.findLength(stringBuilder));	
+					break;		
+				
+				case 2:
+					StringBuilder stringBuilderOne = new StringBuilder("hello");
+					System.out.println("StringBuilder: "+stringBuilderOne);
+					System.out.println("The length of string builder: "+ task.findLength(stringBuilderOne));
+					System.out.println("Enter the no of strings to be added");
+					int noOfStrings=sc.nextInt();	
+					String[] stringArray = new String[noOfStrings];	
+					System.out.println("Enter the strings");
+					for(int i=0;i<noOfStrings;i++){
+						stringArray[i]=sc.next();
+					}
+					System.out.println("Enter the symbol to seperate them");
+				        char character = sc.next().charAt(0);
+					System.out.println("After addition of strings:"+task.addStrings(stringBuilderOne,stringArray,noOfStrings,character));
+					System.out.println("The length of string builder: "+ task.findLength(stringBuilderOne));
+					break;
+
+				case 3:
+				
+					StringBuilder stringBuilderTwo = new StringBuilder("Zoho Corporation");
+					System.out.println("StringBuilder: "+stringBuilderTwo);
+					System.out.println("Enter the string to be added");
+					String stringInBetween = sc.next();
+					System.out.println("After addition of string in between "+ task.insertInBetween(stringBuilderTwo,stringInBetween,' '));
+					System.out.println("The length of string builder: "+ task.findLength(stringBuilderTwo));
+					break;
+					
+					
+					
+				case 4:
+					StringBuilder stringBuilderDelete = new StringBuilder("Nice Day");
+					System.out.println("StringBuilder: "+stringBuilderDelete);
+					System.out.println("The length of string builder: "+ task.findLength(stringBuilderDelete));
+					System.out.println("Enter the string to delete");
+					String stringToDelete = sc.next();
+					System.out.println("After deletion of string "+ task.deleteString(stringBuilderDelete,stringToDelete));
+					System.out.println("The length of string builder: "+ task.findLength(stringBuilderDelete));
+					break;
+
+
+				case 5:
+					StringBuilder stringBuilderReplace = new StringBuilder("Task Completion Message");
+					System.out.println("StringBuilder: "+stringBuilderReplace);
+					System.out.println("The length of string builder: "+ task.findLength(stringBuilderReplace));
+					System.out.println("Enter the character to be replaced ");
+					char toBeReplaced=sc.next().charAt(0);
+					sc.nextLine();
+					System.out.println("Enter the character to replace");
+					char character=sc.next().charAt(0);
+					System.out.println("After replacing the character "+task.replaceChar(stringBuilderReplace,toBeReplaced,character));
+					System.out.println("The length of string builder "+ task.findLength(stringBuilderReplace));
+					break;
+
+				case 6:
+					
+					StringBuilder stringBuilderReverse = new StringBuilder("Reverse the stringbuilder");
+					System.out.println("StringBuilder: "+stringBuilderReverse);
+					System.out.println("The length of string builder " + task.findLength(stringBuilderReverse));
+					System.out.println("After reversing  the character "+task.reverseBuilder(stringBuilderReverse));
+					System.out.println("The length of string builder "+ task.findLength(stringBuilderReverse));
+					break;
+
+				case 7:
+					
+					StringBuilder subStringDelete = new StringBuilder("StringBuilderismutable");
+					System.out.println("StringBuilder: "+subStringDelete);
+					System.out.println("The length of string builder "+ task.findLength(subStringDelete));
+					System.out.println("Enter the start index");
+					int startIndex = sc.nextInt();
+					System.out.println("Enter the end index ");
+					int endIndex =sc.nextInt();
+					System.out.println("After deleting the substring "+task.deleteSubstring(subStringDelete,startIndex,endIndex));
+					System.out.println("The length of string builder "+ task.findLength(subStringDelete));
+					break;
+
+				case 8:
+
+					StringBuilder subStringReplace = new StringBuilder("StringBuilderismutable");
+					System.out.println("StringBuilder: "+subStringReplace);
+					System.out.println("The length of string builder "+ task.findLength(subStringReplace));
+					System.out.println("Enter the start index");
+					int start = sc.nextInt();
+					System.out.println("Enter the end index");
+					int end =sc.nextInt();
+					System.out.println("Enter the string to replace");
+					String replace=sc.next();
+					System.out.println("After deleting the substring"+task.replaceSubstring(subStringReplace,start,end,replace));
+					System.out.println("The length of string builder "+ task.findLength(subStringReplace));
+					break;
+				
+				case 9:
+		
+					StringBuilder firstOccurance = new StringBuilder("String#Builder#is#mutable");
+					System.out.println("StringBuilder: "+firstOccurance);
+					System.out.println("The length of string builder: "+ task.findLength(firstOccurance));
+					System.out.println("Enter the string to find");
+					String findString = sc.next();
+					System.out.println("After deleting the substring "+task.firstOccuranceOf(firstOccurance,findString));
+					System.out.println("The length of string builder: "+ task.findLength(firstOccurance));
+					break;
+					
+				case 10:
+
+					StringBuilder lastOccurance = new StringBuilder("String#Builder#is#mutable");
+					System.out.println("StringBuilder: "+lastOccurance);
+					System.out.println("The length of string builder "+ task.findLength(lastOccurance));
+					System.out.println("Enter the string to find");
+					String findLastString = sc.next();
+					System.out.println("After deleting the substring "+task.lastOccuranceOf(lastOccurance,findLastString));
+					System.out.println("The length of string builder "+ task.findLength(lastOccurance));
+					break;
+
+
+
+			}
+			}
+			catch (InvalidException e) {
+                    		System.out.println("Invalid operation: " + e.getMessage());
+                	} catch (OutOfBoundException e) {
+                    		System.out.println("Out of bound error: " + e.getMessage());
+			}
+		
+						
+                }
+		while(choice !=-1);}
+		finally{
+		sc.close()
+		}
+					
+	}
+}
+
