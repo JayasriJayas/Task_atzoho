@@ -34,7 +34,7 @@ public class StringBuilderTask{
 	{
 		int length=findLength(stringbuilder);
 		Util.validate(string);
-		Util.validate(Character);
+		Util.validate(character);
 		for(int i=0;i<length;i++){
 			if(stringbuilder.charAt(i)==character){
 				stringbuilder.insert(i,string);
