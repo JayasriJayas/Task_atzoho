@@ -29,7 +29,7 @@ public class Runner{
 			try{
 			switch(choice){
 				case 1:
-					StringBuilder stringBuilder = new StringBuilder();
+					StringBuilder stringBuilder= task.getStringBuilder("");
 					System.out.println("The length of string builder: "+ task.findLength(stringBuilder ));
 					System.out.println("Enter the string to be added");
 					String string = sc.next();
@@ -38,7 +38,7 @@ public class Runner{
 					break;		
 				
 				case 2:
-					StringBuilder stringBuilderOne = new StringBuilder("hello");
+					StringBuilder stringBuilderOne=task.getStringBuilder("hello");
 					System.out.println("StringBuilder: "+stringBuilderOne);
 					System.out.println("The length of string builder: "+ task.findLength(stringBuilderOne));
 					System.out.println("Enter the no of strings to be added");
@@ -56,7 +56,7 @@ public class Runner{
 
 				case 3:
 				
-					StringBuilder stringBuilderTwo = new StringBuilder("Zoho Corporation");
+					StringBuilder stringBuilderTwo = task.getStringBuilder("Zoho Corporation");
 					System.out.println("StringBuilder: "+stringBuilderTwo);
 					System.out.println("Enter the string to be added");
 					String stringInBetween = sc.next();
@@ -67,7 +67,7 @@ public class Runner{
 					
 					
 				case 4:
-					StringBuilder stringBuilderDelete = new StringBuilder("Nice Day");
+					StringBuilder stringBuilderDelete = task.getStringBuilder("Nice Day");
 					System.out.println("StringBuilder: "+stringBuilderDelete);
 					System.out.println("The length of string builder: "+ task.findLength(stringBuilderDelete));
 					System.out.println("Enter the string to delete");
@@ -78,7 +78,7 @@ public class Runner{
 
 
 				case 5:
-					StringBuilder stringBuilderReplace = new StringBuilder("Task Completion Message");
+					StringBuilder stringBuilderReplace = task.getStringBuilder("Task Completion Message");
 					System.out.println("StringBuilder: "+stringBuilderReplace);
 					System.out.println("The length of string builder: "+ task.findLength(stringBuilderReplace));
 					System.out.println("Enter the character to be replaced ");
@@ -92,7 +92,7 @@ public class Runner{
 
 				case 6:
 					
-					StringBuilder stringBuilderReverse = new StringBuilder("Reverse the stringbuilder");
+					StringBuilder stringBuilderReverse = task.getStringBuilder("Reverse the stringbuilder");
 					System.out.println("StringBuilder: "+stringBuilderReverse);
 					System.out.println("The length of string builder " + task.findLength(stringBuilderReverse));
 					System.out.println("After reversing  the character "+task.reverseBuilder(stringBuilderReverse));
@@ -101,7 +101,7 @@ public class Runner{
 
 				case 7:
 					
-					StringBuilder subStringDelete = new StringBuilder("StringBuilderismutable");
+					StringBuilder subStringDelete = task.getStringBuilder("StringBuilderismutable");
 					System.out.println("StringBuilder: "+subStringDelete);
 					System.out.println("The length of string builder "+ task.findLength(subStringDelete));
 					System.out.println("Enter the start index");
@@ -114,7 +114,7 @@ public class Runner{
 
 				case 8:
 
-					StringBuilder subStringReplace = new StringBuilder("StringBuilderismutable");
+					StringBuilder subStringReplace = task.getStringBuilder("StringBuilderismutable");
 					System.out.println("StringBuilder: "+subStringReplace);
 					System.out.println("The length of string builder "+ task.findLength(subStringReplace));
 					System.out.println("Enter the start index");
@@ -129,7 +129,7 @@ public class Runner{
 				
 				case 9:
 		
-					StringBuilder firstOccurance = new StringBuilder("String#Builder#is#mutable");
+					StringBuilder firstOccurance = task.getStringBuilder("String#Builder#is#mutable");
 					System.out.println("StringBuilder: "+firstOccurance);
 					System.out.println("The length of string builder: "+ task.findLength(firstOccurance));
 					System.out.println("Enter the string to find");
@@ -140,7 +140,7 @@ public class Runner{
 					
 				case 10:
 
-					StringBuilder lastOccurance = new StringBuilder("String#Builder#is#mutable");
+					StringBuilder lastOccurance = task.getStringBuilder("String#Builder#is#mutable");
 					System.out.println("StringBuilder: "+lastOccurance);
 					System.out.println("The length of string builder "+ task.findLength(lastOccurance));
 					System.out.println("Enter the string to find");
