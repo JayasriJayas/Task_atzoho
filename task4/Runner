@@ -13,16 +13,16 @@ public class Runner{
 		int choice;
 		try{
 		do{
-			System.out.println("Add a string and find its length");
-			System.out.println("Adding strings and find final length");
-			System.out.println("Insert a string in between and find final length");
-			System.out.println("Delete a string and find final length");
-			System.out.println("Replace a symbol and find the final length");
-			System.out.println("Reverse the string and find the final length");
-			System.out.println("Delete the substring and find the final length");
-			System.out.println("Replace the substring and find the final length");
-			System.out.println("Find the first occurance of the symbol");
-			System.out.println("Find the last occurance of the symbol");
+			System.out.println("1.Adding a string and its length");
+			System.out.println("2.Adding strings and  final length");
+			System.out.println("3.Inserting a string in between and final length");
+			System.out.println("4.Delete a string and final length");
+			System.out.println("5.Replace a symbol and  the final length");
+			System.out.println("6.Reverse the string and the final length");
+			System.out.println("7.Delete the substring and the final length");
+			System.out.println("8.Replace the substring and the final length");
+			System.out.println("9.First occurance of the symbol");
+			System.out.println("10.Last occurance of the symbol");
 			System.out.println("Enter the choice:");
 			choice = sc.nextInt();
 
