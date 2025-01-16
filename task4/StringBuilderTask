@@ -9,8 +9,10 @@ public class StringBuilderTask{
 		StringBuilder stringBuilder = new StringBuilder(string);
 		return stringBuilder;
 	}
-		
-	
+	public getStringBuilder(){
+		StringBuilder stringBuilder = new StringBuilder();
+		return stringBuilder;
+	}	
 	public int findLength(StringBuilder stringbuilder){
 		Util.validate(stringbuilder);
 		return stringbuilder.length();
