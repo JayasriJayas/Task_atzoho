@@ -4,6 +4,12 @@ import exception.InvalidException;
 import exception.OutOfBoundException;
 
 public class StringBuilderTask{
+
+	public getStringBuilder(String string){
+		StringBuilder stringBuilder = new StringBuilder(string);
+		return stringBuilder;
+	}
+		
 	
 	public int findLength(StringBuilder stringbuilder){
 		Util.validate(stringbuilder);
