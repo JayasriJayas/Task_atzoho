@@ -29,7 +29,7 @@ public class Runner{
 			try{
 			switch(choice){
 				case 1:
-					StringBuilder stringBuilder= task.getStringBuilder("");
+					StringBuilder stringBuilder= task.getStringBuilder();
 					System.out.println("The length of string builder: "+ task.findLength(stringBuilder ));
 					System.out.println("Enter the string to be added");
 					String string = sc.next();
