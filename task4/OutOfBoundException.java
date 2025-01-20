@@ -1,6 +1,6 @@
 package exception;
 
-public class OutOfBoundException{
+public class OutOfBoundException extends Exception{
 	public OutOfBoundException(String message) {
 		super(message);
 	}
