@@ -9,7 +9,7 @@ public  class Util {
 		}
 	}
 	
-	public static String indexCheck(int stringLen,int value)throws OutOfBoundException{
+	public static void indexCheck(int stringLen,int value)throws OutOfBoundException{
 		if(value<0 || value>stringLen){
 			throw new OutOfBoundException("Error:Input is out of valid input range");
 		}
