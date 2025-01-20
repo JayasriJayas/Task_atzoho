@@ -90,8 +90,8 @@ public class Runner{
 					break;
 				case 5:
 					Runner runObject = new Runner();
-					Swift s = new Swift();
-					runObject.swiftMethod(s);
+					Swift swiftObject = new Swift();
+					runObject.swiftMethod(swiftObject);
 					Car obj = new Swift();
 			//		runObject.swiftMethod(obj);
 					XUV xuvObject= new XUV();
@@ -100,18 +100,18 @@ public class Runner{
 			//		runObject.swiftMethod(scrossObject);
 					break;
 				case 6:
-					SCross scro = new SCross();
-					scro.maintenance();
+					SCross scrossOb = new SCross();
+					scrossOb.maintenance();
 					Car carRef=new SCross();
 					carRef.maintenance();
 					Car car = new Car();
 					car.maintenance();
-					Swift swif = new Swift();
-					swif.maintenance();
+					Swift swiftOb = new Swift();
+					swiftOb.maintenance();
 					break;
 				case 7:
-					XUV defaultCons = new XUV();
-			//		XUV overloadedCons = new XUV("hello");
+					XUV defaultConstructor = new XUV();
+			//		XUV overloadedConstructor = new XUV("hello");
 					break;
 				case 8:
 			//		BirdAbstract bird = new BirdAbstract();
