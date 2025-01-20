@@ -5,7 +5,7 @@ import bird.*;
 import java.util.Scanner;
 
 
-class Runner{
+public class Runner{
 	
 	public static void main(String[] args){
 		
@@ -75,26 +75,29 @@ class Runner{
 					break;
 	
 				case 3:
+					Runner runner = new Runner();
 					Swift swifttObj =new Swift();
-					Runner.identifyObj(swifttObj);
+					runner.identifyObj(swifttObj);
 					break;
 				case 4:
+					Runner runObj = new Runner();
 					Swift swiftObj = new Swift();
-					Runner.identifyObj(swiftObj);
+					runObj.identifyObj(swiftObj);
 					SCross scrossObj = new SCross();
-					Runner.identifyObj(scrossObj);
+					runObj.identifyObj(scrossObj);
 					XUV xuvObj = new XUV();
-					Runner.identifyObj(xuvObj);
+					runObj.identifyObj(xuvObj);
 					break;
 				case 5:
+					Runner runObject = new Runner();
 					Swift s = new Swift();
-					Runner.swiftMethod(s);
+					runObject.swiftMethod(s);
 					Car obj = new Swift();
-			//		Runner.swiftMethod(obj);
-					XUV x= new XUV();
-			//		Runner.swiftMethod(x);
-					SCross scr =new SCross();
-			//		Runner.swiftMethod(scr);
+			//		runObject.swiftMethod(obj);
+					XUV xuvObject= new XUV();
+			//		runObject.swiftMethod(xuvObject);
+					SCross scrossObject =new SCross();
+			//		runObject.swiftMethod(scrossObject);
 					break;
 				case 6:
 					SCross scro = new SCross();
@@ -125,11 +128,6 @@ class Runner{
 					System.out.println("Enter a valid choice");
 					
 			}
-	
-					
-					
-		
-
 		System.out.println("Enter your choice(to exit enter -1) :");
 		choice = sc.nextInt();
 		}while(choice!=-1);
@@ -137,8 +135,8 @@ class Runner{
 	finally{
 		sc.close();
 	}
-}
-	public static void identifyObj(Car obj){
+ }
+	void identifyObj(Car obj){
 		if(obj instanceof Swift){
 			System.out.println("Hatch");
 		}
@@ -149,7 +147,7 @@ class Runner{
 			System.out.println("Seden");
 		}
 	}
-	public static void swiftMethod(Swift obj){
+	void swiftMethod(Swift obj){
 		System.out.println("Swift Method");
         }
  	
