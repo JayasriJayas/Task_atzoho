@@ -5,11 +5,11 @@ import exception.OutOfBoundException;
 
 public class StringBuilderTask{
 
-	public getStringBuilder(String string){
+	public StringBuilder getStringBuilder(String string){
 		StringBuilder stringBuilder = new StringBuilder(string);
 		return stringBuilder;
 	}
-	public getStringBuilder(){
+	public StringBuilder getStringBuilder(){
 		StringBuilder stringBuilder = new StringBuilder();
 		return stringBuilder;
 	}	
