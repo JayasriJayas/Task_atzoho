@@ -15,6 +15,7 @@ public class Runner{
 	public static void main(String[] args){
 		
 		Scanner sc = new Scanner(System.in);
+		Runner runObject = new Runner();
 		int choice;
 		
 		try{
@@ -80,12 +81,12 @@ public class Runner{
 					break;
 	
 				case 3:
-					Runner runner = new Runner();
+					
 					Swift swifttObj =new Swift();
-					runner.identifyObj(swifttObj);
+					runObject.identifyObj(swifttObj);
 					break;
 				case 4:
-					Runner runObj = new Runner();
+					
 					Swift swiftObj = new Swift();
 					runObj.identifyObj(swiftObj);
 					SCross scrossObj = new SCross();
@@ -94,15 +95,15 @@ public class Runner{
 					runObj.identifyObj(xuvObj);
 					break;
 				case 5:
-					Runner runObject = new Runner();
+
 					Swift swiftObject = new Swift();
-					runObject.swiftMethod(swiftObject);
+					runObj.swiftMethod(swiftObject);
 					Car obj = new Swift();
-			//		runObject.swiftMethod(obj);
+			//		runObj.swiftMethod(obj);
 					XUV xuvObject= new XUV();
-			//		runObject.swiftMethod(xuvObject);
+			//		runObj.swiftMethod(xuvObject);
 					SCross scrossObject =new SCross();
-			//		runObject.swiftMethod(scrossObject);
+			//		runObj.swiftMethod(scrossObject);
 					break;
 				case 6:
 					SCross scrossOb = new SCross();
