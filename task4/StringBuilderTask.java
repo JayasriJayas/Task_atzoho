@@ -80,15 +80,15 @@ public class StringBuilderTask{
 
 	public StringBuilder deleteSubstring(StringBuilder stringbuilder,int start,int end){
 		int length=findLength(stringbuilder);
-		indexCheck(length,start);
-		indexCheck(length,end);
+		Util.indexCheck(length,start);
+		Util.indexCheck(length,end);
 		return stringbuilder.delete(start,end);
 	}
 
 	public StringBuilder replaceSubstring(StringBuilder stringbuilder,int start,int end,String stringToReplace){
 		int length=findLength(stringbuilder);
-		indexCheck(length,start);
-		indexCheck(length,end);
+		Util.indexCheck(length,start);
+		Util.indexCheck(length,end);
 		Util.validate(stringToReplace);
 		return stringbuilder.replace(start,end,stringToReplace);
 	}
@@ -100,8 +100,8 @@ public class StringBuilderTask{
 	}
 	
 	public int lastOccuranceOf(StringBuilder stringbuilder, String string){
-		validate(stringbuilder);
-		validate(string);
+		Util.validate(stringbuilder);
+		Util.validate(string);
 		return stringbuilder.lastIndexOf(string);
 	}
 }
