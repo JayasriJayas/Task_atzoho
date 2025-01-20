@@ -133,8 +133,8 @@ public class Runner{
 					System.out.println("Enter a valid choice");
 					
 			}
-		System.out.println("Enter your choice(to exit enter -1) :");
-		choice = sc.nextInt();
+		        System.out.println("Enter your choice(to exit enter -1) :");
+		        choice = sc.nextInt();
 		}while(choice!=-1);
 	}
 	finally{
