@@ -56,8 +56,8 @@ public class StringBuilderTask{
 		int start=firstOccuranceOf(stringbuilder,string);
 		int length=string.length();
 		int end=start+length;
-		indexCheck(length,start);
-		indexCheck(length,end);
+		Util.indexCheck(length,start);
+		Util.indexCheck(length,end);
 		return stringbuilder.delete(start,end);
 	}
 
