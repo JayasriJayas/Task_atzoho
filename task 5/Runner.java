@@ -140,10 +140,10 @@ public class Runner{
 		if(obj instanceof Swift){
 			System.out.println("Hatch");
 		}
-		if(obj instanceof Swift){
+		if(obj instanceof XUV){
 			System.out.println("SUV");
 		}
-		if(obj instanceof Swift){
+		if(obj instanceof SCross){
 			System.out.println("Seden");
 		}
 	}
