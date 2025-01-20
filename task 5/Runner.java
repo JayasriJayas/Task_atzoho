@@ -1,7 +1,12 @@
 package runner;
-import task.*;
-import birds.*;
-import bird.*;
+import task.Car;
+import task.Swift;
+import task.SCross;
+import task.XUV;
+import birds.BirdAbstract;
+import birds.ParrotMod;
+import bird.Bird;
+import bird.Duck;
 import java.util.Scanner;
 
 
@@ -102,8 +107,8 @@ public class Runner{
 				case 6:
 					SCross scrossOb = new SCross();
 					scrossOb.maintenance();
-					Car carRef=new SCross();
-					carRef.maintenance();
+					Car carReference=new SCross();
+					carReference.maintenance();
 					Car car = new Car();
 					car.maintenance();
 					Swift swiftOb = new Swift();
@@ -152,3 +157,4 @@ public class Runner{
         }
  	
 }
+	
