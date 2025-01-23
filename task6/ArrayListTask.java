@@ -6,7 +6,6 @@ import exception.OutOfBoundException;
 import java.util.ArrayList;
 
 public class ArrayListTask{
-
     
     public <T> ArrayList<T> getArrayList() {
         return new ArrayList<>();
