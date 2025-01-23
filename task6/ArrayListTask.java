@@ -60,36 +60,32 @@ public class ArrayListTask {
     public ArrayList<String> getSubList(ArrayList<String> arraylist, int fromIndex, int toIndex) 
             throws InvalidException {
         Util.validate(arraylist);
-        return new ArrayList<>(arraylist.subList(fromIndex, toIndex));
+        return arraylist.subList(fromIndex, toIndex);
     }
 
     public ArrayList<String> addList(ArrayList<String> arraylist, ArrayList<String> list) throws InvalidException {
         Util.validate(arraylist);
         Util.validate(list);
-        arraylist.addAll(list);
-        return arraylist;
+        return arraylist.addAll(list); 
     }
 
     public ArrayList<Double> removeElement(ArrayList<Double> arraylist, int index) throws InvalidException, OutOfBoundException {
         int length = getLength(arraylist);
         Util.indexCheck(index, length);
         Util.validate(arraylist);
-        arraylist.remove(index);
-        return arraylist;
+        return arraylist.remove(index);
     }
 
     public ArrayList<String> removeList(ArrayList<String> arraylist, ArrayList<String> list) throws InvalidException {
         Util.validate(arraylist);
         Util.validate(list);
-        arraylist.removeAll(list);
-        return arraylist;
+        return arraylist.removeAll(list);
     }
 
     public ArrayList<String> retainList(ArrayList<String> arraylist, ArrayList<String> list) throws InvalidException {
         Util.validate(arraylist);
         Util.validate(list);
-        arraylist.retainAll(list);
-        return arraylist;
+        return arraylist.retainAll(list);
     }
 
     public boolean checkElement(ArrayList<String> arraylist, String string) throws InvalidException {
@@ -100,7 +96,7 @@ public class ArrayListTask {
 
     public ArrayList<Long> clearList(ArrayList<Long> arraylist) throws InvalidException {
         Util.validate(arraylist);
-        arraylist.clear();
-        return arraylist;
+        return arraylist.clear();
+        
     }
 }
