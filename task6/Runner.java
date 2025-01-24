@@ -7,6 +7,7 @@ import java.util.Iterator;
 import exception.InvalidException;
 import exception.OutOfBoundException;
 import customclass.Employee;
+import java.util.List;
 
 public class Runner {
     static Scanner sc = new Scanner(System.in);
@@ -42,12 +43,12 @@ public class Runner {
 
                 switch (choice) {
                   case 1:
-                        ArrayList<String> arrayListOne = task.getArrayList();
+                        List<String> arrayListOne = task.getArrayList();
                         System.out.println("ArrayList created. Size: " + task.getLength(arrayListOne));
                         break;
 
                   case 2:
-                        ArrayList<String> arrayListTwo = task.getArrayList();
+                        List<String> arrayListTwo = task.getArrayList();
                         System.out.println("Enter the number of strings:");
                         int count = sc.nextInt();
                         System.out.println("ArrayList: " + task.addElements(arrayListTwo, runner.getStrings(count)));
@@ -55,7 +56,7 @@ public class Runner {
                         break;
 
                   case 3:
-                        ArrayList<Integer> arrayListThree = task.getArrayList();
+                        List<Integer> arrayListThree = task.getArrayList();
                         System.out.println("Enter the number of integers:");
                         int countOne = sc.nextInt();
                         Integer[] integers = new Integer[countOne];
@@ -68,7 +69,7 @@ public class Runner {
                         break;
 
                   case 4:
-                        ArrayList<Object> arrayListFour = task.getArrayList();
+                        List<Object> arrayListFour = task.getArrayList();
                         System.out.println("Enter the number of employees:");
                         int countTwo = sc.nextInt();
                         Employee[] employees = new Employee[countTwo];
@@ -83,7 +84,7 @@ public class Runner {
                         break;
 
                   case 5:
-                        ArrayList<Object> arrayListFive = task.getArrayList();
+                        List<Object> arrayListFive = task.getArrayList();
                         System.out.println("Enter the number of integers:");
                         int countThree = sc.nextInt();
                         Integer[] integerArray = new Integer[countThree];
@@ -112,7 +113,7 @@ public class Runner {
                         break;
 
                   case 6:
-                        ArrayList<String> arrayListSix = task.getArrayList();
+                        List<String> arrayListSix = task.getArrayList();
                         System.out.println("Enter the number of strings:");
                         int countSix = sc.nextInt();
                         task.addElements(arrayListSix, runner.getStrings(countSix));
@@ -124,7 +125,7 @@ public class Runner {
                         break;
 
                   case 7:
-                        ArrayList<String> arrayListSeven = task.getArrayList();
+                        List<String> arrayListSeven = task.getArrayList();
                         System.out.println("Enter the number of strings:");
                         int countSeven = sc.nextInt();
                         task.addElements(arrayListSeven, runner.getStrings(countSeven));
@@ -136,7 +137,7 @@ public class Runner {
                         break;
 
                   case 8:
-                        ArrayList<String> arrayListEight = task.getArrayList();
+                        List<String> arrayListEight = task.getArrayList();
                         System.out.println("Enter the number of strings:");
                         int countEight = sc.nextInt();
                         task.addElements(arrayListEight, runner.getStrings(countEight));
@@ -146,7 +147,7 @@ public class Runner {
                         System.out.println("Length: " + task.getLength(arrayListEight));
                         break;
 		  case 9:
-   			ArrayList<String> arrayListNine = task.getArrayList();
+   			List<String> arrayListNine = task.getArrayList();
     			System.out.println("Enter the number of strings:");
    			int countNine = sc.nextInt();
     			task.addElements(arrayListNine, runner.getStrings(countNine));
@@ -157,7 +158,7 @@ public class Runner {
     			break;
 
 		 case 10:
-   			ArrayList<String> arrayListTen = task.getArrayList();
+   			List<String> arrayListTen = task.getArrayList();
     			System.out.println("Enter the number of strings:");
     			int countTen = sc.nextInt();
    		 	task.addElements(arrayListTen, runner.getStrings(countTen));
@@ -170,32 +171,32 @@ public class Runner {
     			break;
 
 	      	case 11:
-    			ArrayList<String> arrayListEleven = task.getArrayList();
+    			List<String> arrayListEleven = task.getArrayList();
     			System.out.println("Enter the number of strings:");
     			int countEleven = sc.nextInt();
     			task.addElements(arrayListEleven, runner.getStrings(countEleven));
     			System.out.println("Enter start and end index:");
     			int start = sc.nextInt();
     			int end = sc.nextInt();
-    			ArrayList<String> arrayListSecond = task.getSubList(arrayListEleven, start, end);
+    			List<String> arrayListSecond = task.getSubList(arrayListEleven, start, end);
     			System.out.println("Second ArrayList: " + arrayListSecond);
     			break;
 
 	     	case 12:
-    			ArrayList<String> arrayListTwelve = task.getArrayList();
+    			List<String> arrayListTwelve = task.getArrayList();
     			System.out.println("Enter the number of strings:");
     			int countTwelve = sc.nextInt();
     			task.addElements(arrayListTwelve, runner.getStrings(countTwelve));
-    			ArrayList<String> second = task.getArrayList();
+    			List<String> second = task.getArrayList();
     			System.out.println("Enter the number of strings for the second list:");
     			int countSecond = sc.nextInt();
     			task.addElements(second, runner.getStrings(countSecond));
-   			ArrayList<String> third = task.addList(arrayListTwelve, second);
+   			List<String> third = task.addList(arrayListTwelve, second);
     			System.out.println(third);
     			break;
 
 	  	case 14:
-    			ArrayList<Double> arrayListFourteen = task.getArrayList();
+    			List<Double> arrayListFourteen = task.getArrayList();
     			System.out.println("Enter the number of decimal values:");
     			int countFourteen = sc.nextInt();
     			Double[] doubleArray = new Double[countFourteen];
@@ -209,11 +210,11 @@ public class Runner {
     			break;
 
 		case 15:
-    			ArrayList<String> arrayListFifteen = task.getArrayList();
+    			List<String> arrayListFifteen = task.getArrayList();
     			System.out.println("Enter the number of strings:");
    			int countFifteen = sc.nextInt();
     			task.addElements(arrayListFifteen, runner.getStrings(countFifteen));
-    			ArrayList<String> secondList = task.getArrayList();
+    			List<String> secondList = task.getArrayList();
     			System.out.println("Enter the number of strings for the second list:");
     			int countList = sc.nextInt();
     			task.addElements(secondList, runner.getStrings(countList));
@@ -222,11 +223,11 @@ public class Runner {
     			break;
 
 		case 16:
-    			ArrayList<String> arrayListSixteen = task.getArrayList();
+    			List<String> arrayListSixteen = task.getArrayList();
     			System.out.println("Enter the number of strings:");
     			int countSixteen = sc.nextInt();
    		 	task.addElements(arrayListSixteen, runner.getStrings(countSixteen));
-   			ArrayList<String> listSecond = task.getArrayList();
+   			List<String> listSecond = task.getArrayList();
     			System.out.println("Enter the number of strings for the second list:");
     			int countSecondSixteen = sc.nextInt();
     			task.addElements(listSecond, runner.getStrings(countSecondSixteen));
@@ -235,7 +236,7 @@ public class Runner {
     			break;
 
 		case 17:
-   	 		ArrayList<Long> arrayListSeventeen = task.getArrayList();
+   	 		List<Long> arrayListSeventeen = task.getArrayList();
     			System.out.println("Enter the number of values:");
     			int countSeventeen = sc.nextInt();
     			Long[] longArray = new Long[countSeventeen];
@@ -248,7 +249,7 @@ public class Runner {
     			break;
 
 		case 18:
-   			ArrayList<String> arrayListEighteen = task.getArrayList();
+   			List<String> arrayListEighteen = task.getArrayList();
     			System.out.println("Enter the number of strings:");
     			int countEighteen = sc.nextInt();
     			task.addElements(arrayListEighteen, runner.getStrings(countEighteen));
