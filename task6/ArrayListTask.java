@@ -77,7 +77,6 @@ public class ArrayListTask{
     public <T> List<T> removeElement(List<T> arraylist, int index)throws InvalidException, OutOfBoundException {
         int length = getLength(arraylist);
         Util.indexCheck(index, length);
-        Util.validate(arraylist);
         arraylist.remove(index);
         return arraylist;
     }
