@@ -1,22 +1,24 @@
-package arraylist;
+ackage arraylist;
 
 import util.Util;
 import exception.InvalidException;
 import exception.OutOfBoundException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ArrayListTask{
+
     
-    public <T> ArrayList<T> getArrayList() {
+    public <T> List<T> getArrayList() {
         return new ArrayList<>();
     }
 
-    public <T> int getLength(ArrayList<T> arraylist) throws InvalidException {
+    public <T> int getLength(List<T> arraylist) throws InvalidException {
         Util.validate(arraylist);
         return arraylist.size();
     }
 
-    public <T> ArrayList<T> addElements(ArrayList<T> arraylist, T[] elements) throws InvalidException {
+    public <T> List<T> addElements(List<T> arraylist, T[] elements) throws InvalidException {
         Util.validate(arraylist);
         Util.validate(elements);
         for (T value : elements) {
@@ -26,55 +28,53 @@ public class ArrayListTask{
     }
 
     
-    public <T> int findIndex(ArrayList<T> arraylist, T element) throws InvalidException {
+    public <T> int findIndex(List<T> arraylist, T element) throws InvalidException {
         Util.validate(arraylist);
         Util.validate(element);
         return arraylist.indexOf(element);
     }
-    public <T> T getElement(ArrayList<T> arraylist, int index) throws InvalidException, OutOfBoundException {
+    public <T> T getElement(List<T> arraylist, int index) throws InvalidException, OutOfBoundException {
         int length = getLength(arraylist);
         Util.indexCheck(index, length);
         return arraylist.get(index);
     }
 
     
-    public <T> int getFirstPosition(ArrayList<T> arraylist, T element) throws InvalidException {
+    public <T> int getFirstPosition(List<T> arraylist, T element) throws InvalidException {
         Util.validate(arraylist);
         Util.validate(element);
         return arraylist.indexOf(element);
     }
 
   
-    public <T> int getLastPosition(ArrayList<T> arraylist, T element) throws InvalidException {
+    public <T> int getLastPosition(List<T> arraylist, T element) throws InvalidException {
         Util.validate(arraylist);
         Util.validate(element);
         return arraylist.lastIndexOf(element);
     }
 
     
-    public <T> ArrayList<T> addAtPosition(ArrayList<T> arraylist, T element, int index)
-            throws InvalidException, OutOfBoundException {
+    public <T> List<T> addAtPosition(List<T> arraylist, T element, int index)throws InvalidException, OutOfBoundException {
         int length = getLength(arraylist);
         Util.indexCheck(index, length);
         Util.validate(arraylist);
         arraylist.add(index, element);
         return arraylist;
     }
-    public <T> ArrayList<T> getSubList(ArrayList<T> arraylist, int fromIndex, int toIndex) throws InvalidException {
+    public <T> List<T> getSubList(List<T> arraylist, int fromIndex, int toIndex) throws InvalidException {
         Util.validate(arraylist);
         return new ArrayList<>(arraylist.subList(fromIndex, toIndex));
     }
 
    
-    public <T> ArrayList<T> addList(ArrayList<T> arraylist, ArrayList<T> list) throws InvalidException {
+    public <T> List<T> addList(List<T> arraylist,List<T> list) throws InvalidException {
         Util.validate(arraylist);
         Util.validate(list);
         arraylist.addAll(list);
         return arraylist;
     }
 
-    public <T> ArrayList<T> removeElement(ArrayList<T> arraylist, int index)
-            throws InvalidException, OutOfBoundException {
+    public <T> List<T> removeElement(List<T> arraylist, int index)throws InvalidException, OutOfBoundException {
         int length = getLength(arraylist);
         Util.indexCheck(index, length);
         Util.validate(arraylist);
@@ -83,14 +83,14 @@ public class ArrayListTask{
     }
 
     
-    public <T> ArrayList<T> removeList(ArrayList<T> arraylist, ArrayList<T> list) throws InvalidException {
+    public <T>List<T> removeList(List<T> arraylist, List<T> list) throws InvalidException {
         Util.validate(arraylist);
         Util.validate(list);
         arraylist.removeAll(list);
         return arraylist;
     }
 
-    public <T> ArrayList<T> retainList(ArrayList<T> arraylist, ArrayList<T> list) throws InvalidException {
+    public <T>List<T> retainList(List<T> arraylist, List<T> list) throws InvalidException {
         Util.validate(arraylist);
         Util.validate(list);
         arraylist.retainAll(list);
@@ -98,13 +98,13 @@ public class ArrayListTask{
     }
 
     
-    public <T> boolean checkElement(ArrayList<T> arraylist, T element) throws InvalidException {
+    public <T> boolean checkElement(List<T> arraylist, T element) throws InvalidException {
         Util.validate(arraylist);
         Util.validate(element);
         return arraylist.contains(element);
     }
 
-       public <T> ArrayList<T> clearList(ArrayList<T> arraylist) throws InvalidException {
+       public <T>List<T> clearList(List<T> arraylist) throws InvalidException {
         Util.validate(arraylist);
         arraylist.clear();
         return arraylist;
