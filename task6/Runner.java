@@ -8,14 +8,14 @@ import exception.InvalidException;
 import exception.OutOfBoundException;
 import customclass.Employee;
 import java.util.List;
+import util.Util;
 
 public class Runner {
-    static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
         int choice;
-        Runner runner = new Runner();
         ArrayListTask task = new ArrayListTask();
+	Scanner sc = new Scanner(System.in);
 
         try {
             do {
@@ -50,7 +50,8 @@ public class Runner {
                         List<String> arrayListTwo = task.getArrayList();
                         System.out.println("Enter the number of strings:");
                         int count = sc.nextInt();
-                        System.out.println("ArrayList: " + task.addElements(arrayListTwo,runner.getStrings(count)));
+			System.out.println("Enter the strings:");
+                        System.out.println("ArrayList: " + task.addElements(arrayListTwo,Util.getStrings(count,sc)));
                         System.out.println("Length: " + task.getLength(arrayListTwo));
                         break;
 
@@ -95,7 +96,7 @@ public class Runner {
 
                         System.out.println("Enter the number of strings:");
                         int countFour = sc.nextInt();
-                        task.addElements(arrayListFive, runner.getStrings(countFour));
+                        task.addElements(arrayListFive, Util.getStrings(countFour,sc));
 
                         System.out.println("Enter the number of employees:");
                         int countFive = sc.nextInt();
@@ -115,7 +116,7 @@ public class Runner {
                         List<String> arrayListSix = task.getArrayList();
                         System.out.println("Enter the number of strings:");
                         int countSix = sc.nextInt();
-                        task.addElements(arrayListSix, runner.getStrings(countSix));
+                        task.addElements(arrayListSix, Util.getStrings(countSix,sc));
                         System.out.println("Enter the string to find its index:");
                         String targetString = sc.next();
                         System.out.println("Index: " + task.findIndex(arrayListSix, targetString));
@@ -127,7 +128,7 @@ public class Runner {
                         List<String> arrayListSeven = task.getArrayList();
                         System.out.println("Enter the number of strings:");
                         int countSeven = sc.nextInt();
-                        task.addElements(arrayListSeven, runner.getStrings(countSeven));
+                        task.addElements(arrayListSeven, Util.getStrings(countSeven,sc));
                         Iterator<String> iterator = arrayListSeven.iterator();
                         while (iterator.hasNext()) {
                             System.out.println(iterator.next());
@@ -139,7 +140,7 @@ public class Runner {
                         List<String> arrayListEight = task.getArrayList();
                         System.out.println("Enter the number of strings:");
                         int countEight = sc.nextInt();
-                        task.addElements(arrayListEight, runner.getStrings(countEight));
+                        task.addElements(arrayListEight, Util.getStrings(countEight,sc));
                         System.out.println("Enter the index:");
                         int index = sc.nextInt();
                         System.out.println("Element at index: " + task.getElement(arrayListEight, index));
@@ -149,7 +150,7 @@ public class Runner {
    			List<String> arrayListNine = task.getArrayList();
     			System.out.println("Enter the number of strings:");
    			int countNine = sc.nextInt();
-    			task.addElements(arrayListNine, runner.getStrings(countNine));
+    			task.addElements(arrayListNine, Util.getStrings(countNine,sc));
     			System.out.println("Enter the duplicate string:");
    	 		String duplicate = sc.next();
     			System.out.println("First Index: " + task.getFirstPosition(arrayListNine, duplicate));
@@ -160,7 +161,7 @@ public class Runner {
    			List<String> arrayListTen = task.getArrayList();
     			System.out.println("Enter the number of strings:");
     			int countTen = sc.nextInt();
-   		 	task.addElements(arrayListTen, runner.getStrings(countTen));
+   		 	task.addElements(arrayListTen,Util.getStrings(countTen	,sc));
     			System.out.println("Enter the string to be added:");
     			String stringOne = sc.next();
     			System.out.println("Enter the index to be added:");
@@ -173,7 +174,7 @@ public class Runner {
     			List<String> arrayListEleven = task.getArrayList();
     			System.out.println("Enter the number of strings:");
     			int countEleven = sc.nextInt();
-    			task.addElements(arrayListEleven, runner.getStrings(countEleven));
+    			task.addElements(arrayListEleven,Util.getStrings(countEleven,sc));
     			System.out.println("Enter start and end index:");
     			int start = sc.nextInt();
     			int end = sc.nextInt();
@@ -185,11 +186,11 @@ public class Runner {
     			List<String> arrayListTwelve = task.getArrayList();
     			System.out.println("Enter the number of strings:");
     			int countTwelve = sc.nextInt();
-    			task.addElements(arrayListTwelve, runner.getStrings(countTwelve));
+    			task.addElements(arrayListTwelve,Util.getStrings(countTwelve,sc));
     			List<String> second = task.getArrayList();
     			System.out.println("Enter the number of strings for the second list:");
     			int countSecond = sc.nextInt();
-    			task.addElements(second, runner.getStrings(countSecond));
+    			task.addElements(second, Util.getStrings(countSecond,sc));
    			List<String> third = task.addList(arrayListTwelve, second);
     			System.out.println(third);
     			break;
@@ -212,11 +213,11 @@ public class Runner {
     			List<String> arrayListFifteen = task.getArrayList();
     			System.out.println("Enter the number of strings:");
    			int countFifteen = sc.nextInt();
-    			task.addElements(arrayListFifteen, runner.getStrings(countFifteen));
+    			task.addElements(arrayListFifteen,Util.getStrings(countFifteen,sc));
     			List<String> secondList = task.getArrayList();
     			System.out.println("Enter the number of strings for the second list:");
     			int countList = sc.nextInt();
-    			task.addElements(secondList, runner.getStrings(countList));
+    			task.addElements(secondList,Util.getStrings(countList,sc));
     			System.out.println("ArrayList: " + task.removeList(arrayListFifteen, secondList));
     			System.out.println("Length: " + task.getLength(secondList));
     			break;
@@ -225,11 +226,11 @@ public class Runner {
     			List<String> arrayListSixteen = task.getArrayList();
     			System.out.println("Enter the number of strings:");
     			int countSixteen = sc.nextInt();
-   		 	task.addElements(arrayListSixteen, runner.getStrings(countSixteen));
+   		 	task.addElements(arrayListSixteen,Util.getStrings(countSixteen,sc));
    			List<String> listSecond = task.getArrayList();
     			System.out.println("Enter the number of strings for the second list:");
     			int countSecondSixteen = sc.nextInt();
-    			task.addElements(listSecond, runner.getStrings(countSecondSixteen));
+    			task.addElements(listSecond,Util.getStrings(countSecondSixteen,sc));
     			System.out.println("ArrayList: " + task.retainList(arrayListSixteen, listSecond));
     			System.out.println("Length: " + task.getLength(listSecond));
     			break;
@@ -251,7 +252,7 @@ public class Runner {
    			List<String> arrayListEighteen = task.getArrayList();
     			System.out.println("Enter the number of strings:");
     			int countEighteen = sc.nextInt();
-    			task.addElements(arrayListEighteen, runner.getStrings(countEighteen));
+    			task.addElements(arrayListEighteen,Util.getStrings(countEighteen,sc));
     			System.out.println("Enter the string:");
     			String checkString = sc.next();
     			System.out.println(task.checkElement(arrayListEighteen, checkString));
@@ -268,14 +269,10 @@ public class Runner {
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
+	finally{
+		sc.close();
+	}
     }
 
-    static String[] getStrings(int count) {
-        System.out.println("Enter the strings:");
-        String[] stringArray = new String[count];
-        for (int i = 0; i < count; i++) {
-            stringArray[i] = sc.next();
-        }
-        return stringArray;
-    }
+ 
 }
