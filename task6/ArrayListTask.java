@@ -1,4 +1,4 @@
-ackage arraylist;
+package arraylist;
 
 import util.Util;
 import exception.InvalidException;
