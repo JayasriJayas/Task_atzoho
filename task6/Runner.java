@@ -37,21 +37,20 @@ public class Runner {
                 System.out.println("16. Retain values and find its length");
                 System.out.println("17. Clear ArrayList and find its length");
                 System.out.println("18. Check the string and find its length");
-                System.out.println("Enter your choice (to end, enter -1): ");
-
+                System.out.println("Enter your choice (to end enter -1): ");
                 choice = sc.nextInt();
 
                 switch (choice) {
                   case 1:
                         List<String> arrayListOne = task.getArrayList();
-                        System.out.println("ArrayList created. Size: " + task.getLength(arrayListOne));
+                        System.out.println("Size: " + task.getLength(arrayListOne));
                         break;
 
                   case 2:
                         List<String> arrayListTwo = task.getArrayList();
                         System.out.println("Enter the number of strings:");
                         int count = sc.nextInt();
-                        System.out.println("ArrayList: " + task.addElements(arrayListTwo, runner.getStrings(count)));
+                        System.out.println("ArrayList: " + task.addElements(arrayListTwo,runner.getStrings(count)));
                         System.out.println("Length: " + task.getLength(arrayListTwo));
                         break;
 
@@ -64,7 +63,7 @@ public class Runner {
                         for (int i = 0; i < countOne; i++) {
                             integers[i] = sc.nextInt();
                         }
-                        System.out.println("ArrayList: " + task.addElements(arrayListThree, integers));
+                        System.out.println("ArrayList: " + task.addElements(arrayListThree,integers));
                         System.out.println("Length: " + task.getLength(arrayListThree));
                         break;
 
@@ -79,7 +78,7 @@ public class Runner {
                             String id = sc.next();
                             employees[i] = new Employee(name, id);
                         }
-                        System.out.println("ArrayList: " + task.addElements(arrayListFour, employees));
+                        System.out.println("ArrayList: " + task.addElements(arrayListFour,employees));
                         System.out.println("Length: " + task.getLength(arrayListFour));
                         break;
 
